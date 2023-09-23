@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  @apply bg-gray-800 h-screen max-w-screen-2xl mx-auto text-gray-100 px-5;
+}
+
+.outline {
+  outline: 1px dashed red;
+}
