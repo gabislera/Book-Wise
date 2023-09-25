@@ -21,6 +21,7 @@ export function RatingCard() {
       <header className='flex justify-between '>
         <div className='grid grid-cols-[auto_1fr] gap-4 items-center'>
           <Image src={avatar} alt='' />
+          {/* change to radix avatar */}
           <div className='flex flex-col'>
             <span className='text-gray-100'>Jaxson Dias</span>
             <span className='text-gray-400 text-sm'>Hoje</span>

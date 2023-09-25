@@ -42,9 +42,8 @@ export default function Home() {
           </div>
         </main>
 
-        <aside className="col-start-2  ">
+        <aside className="col-start-2 ">
           <div className="fixed left-auto">
-
             <div className="flex justify-between text-sm mb-4">
               <h2>Livros populares</h2>
               <span>Ver todos</span>
