@@ -1,7 +1,7 @@
 import DefaultLayout from "@/layouts/DefaultLayout";
 import type { ReactElement } from 'react'
 import type { NextPageWithLayout } from '../_app'
-import { Bookmark, Books, MagnifyingGlass, User, UserList } from "@phosphor-icons/react";
+import { Bookmark, Books, User, UserList } from "@phosphor-icons/react";
 import * as Avatar from '@radix-ui/react-avatar'
 import { BookOpen } from "@phosphor-icons/react/dist/ssr";
 import { UserRatingCard } from "@/components/UserRatingCard";
