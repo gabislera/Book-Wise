@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import book from '../../assets/arquitetura-limpa.png'
 import { Star, StarHalf } from '@phosphor-icons/react'
+import { RatingStars } from '../RatingStars'
 
 export function TrendingBookCard() {
   return (
@@ -13,13 +14,7 @@ export function TrendingBookCard() {
           {/* verificar titulos muito grandes */}
         </div>
 
-        <div className='flex'>
-          <Star weight='fill' className='w-4 h-4 text-purple-100' />
-          <Star weight='fill' className='w-4 h-4 text-purple-100' />
-          <Star weight='fill' className='w-4 h-4 text-purple-100' />
-          <Star weight='fill' className='w-4 h-4 text-purple-100' />
-          <StarHalf weight='fill' className='w-4 h-4 text-purple-100' />
-        </div>
+        <RatingStars />
       </div>
     </div>
   )

@@ -3,6 +3,7 @@ import avatar from '../../assets/Avatar.png'
 import Image from 'next/image'
 import book from '../../assets/arquitetura-limpa.png'
 import { useState } from 'react';
+import { RatingStars } from '../RatingStars';
 
 export function RatingCard() {
   const [showFullText, setShowFullText] = useState(false)
@@ -27,13 +28,7 @@ export function RatingCard() {
             <span className='text-gray-400 text-sm'>Hoje</span>
           </div>
         </div>
-        <div className='flex'>
-          <Star weight='fill' className='w-4 h-4 text-purple-100' />
-          <Star weight='fill' className='w-4 h-4 text-purple-100' />
-          <Star weight='fill' className='w-4 h-4 text-purple-100' />
-          <Star weight='fill' className='w-4 h-4 text-purple-100' />
-          <StarHalf weight='fill' className='w-4 h-4 text-purple-100' />
-        </div>
+        <RatingStars />
       </header>
 
       <footer className='grid grid-cols-[108px_auto] gap-5'>
