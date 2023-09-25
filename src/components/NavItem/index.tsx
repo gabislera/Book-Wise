@@ -6,7 +6,6 @@ import { text } from "stream/consumers";
 interface NavItemProps extends ComponentProps<typeof Link> {
   children: ReactNode
   active: boolean
-
 }
 
 export function NavItem({ children, active, ...rest }: NavItemProps) {

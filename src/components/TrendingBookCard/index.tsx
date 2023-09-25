@@ -2,9 +2,9 @@ import Image from 'next/image'
 import book from '../../assets/arquitetura-limpa.png'
 import { Star, StarHalf } from '@phosphor-icons/react'
 
-export function PopularBookCard() {
+export function TrendingBookCard() {
   return (
-    <div className="w-[324px]  bg-gray-700 rounded-lg mb-5 grid grid-cols-[64px_auto] gap-5 px-5 py-4 ">
+    <div className="w-[324px] bg-gray-700 rounded-lg mb-5 grid grid-cols-[64px_auto] gap-5 px-5 py-4 ">
       <Image src={book} alt='' width={64} />
       <div className='flex flex-col'>
         <div className='flex flex-col'>

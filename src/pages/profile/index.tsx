@@ -5,6 +5,7 @@ import { Bookmark, Books, MagnifyingGlass, User, UserList } from "@phosphor-icon
 import * as Avatar from '@radix-ui/react-avatar'
 import { BookOpen } from "@phosphor-icons/react/dist/ssr";
 import { UserRatingCard } from "@/components/UserRatingCard";
+import { SearchInput } from "@/components/SearchInput";
 
 const Profile: NextPageWithLayout = () => {
   return (
@@ -16,9 +17,8 @@ const Profile: NextPageWithLayout = () => {
 
       <section className="grid grid-cols-home ">
         <main>
-          <form className="max-w-[608px] flex items-center gap-2 px-5 py-3 border border-gray-500 rounded-md mb-8">
-            <input type="text" className="bg-gray-800 w-full text-sm text-gray-400" placeholder="Buscar livro avaliado" />
-            <MagnifyingGlass weight="thin" className="w-5 h-5 text-gray-500" />
+          <form className="max-w-[608px] ">
+            <SearchInput />
           </form>
 
           <div >

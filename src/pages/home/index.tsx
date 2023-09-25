@@ -1,6 +1,6 @@
 import { RatingCard } from "@/components/RatingCard";
 import { LastReadCard } from "@/components/LastReadCard";
-import { PopularBookCard } from "@/components/PopularBookCard";
+import { TrendingBookCard } from "@/components/TrendingBookCard";
 import DefaultLayout from "@/layouts/DefaultLayout";
 import { ChartLineUp } from "@phosphor-icons/react";
 
@@ -49,10 +49,10 @@ export default function Home() {
               <span>Ver todos</span>
             </div>
 
-            <PopularBookCard />
-            <PopularBookCard />
-            <PopularBookCard />
-            <PopularBookCard />
+            <TrendingBookCard />
+            <TrendingBookCard />
+            <TrendingBookCard />
+            <TrendingBookCard />
           </div>
         </aside>
       </section>
