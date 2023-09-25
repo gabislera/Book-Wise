@@ -5,7 +5,7 @@ import type { NextPageWithLayout } from '../_app'
 
 const Explore: NextPageWithLayout = () => {
   return (
-    <div className=" bg-gray-700 flex flex-col outline">
+    <div className=" bg-gray-700 flex flex-col">
       <div>teste</div>
       <main className="">
         oiiii

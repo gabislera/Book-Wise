@@ -4,7 +4,7 @@ import Image from 'next/image'
 import book from '../../assets/arquitetura-limpa.png'
 import { useState } from 'react';
 
-export function BookCard() {
+export function RatingCard() {
   const [showFullText, setShowFullText] = useState(false)
   const maxChars = 240
 
@@ -17,7 +17,7 @@ export function BookCard() {
   const truncatedText = description.slice(0, maxChars) + '... '
 
   return (
-    <section className="max-w-[608px] bg-gray-700 rounded-lg mb-5 p-6 flex flex-col gap-8">
+    <div className="max-w-[608px] bg-gray-700 rounded-lg mb-5 p-6 flex flex-col gap-8">
       <header className='flex justify-between '>
         <div className='grid grid-cols-[auto_1fr] gap-4 items-center'>
           <Image src={avatar} alt='' />
@@ -55,6 +55,6 @@ export function BookCard() {
           </p>
         </div>
       </footer>
-    </section>
+    </div>
   )
 }

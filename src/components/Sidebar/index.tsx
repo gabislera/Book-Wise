@@ -1,11 +1,11 @@
 import Image from "next/image"
 import logo from '@/assets/logo.svg'
 import { ChartLineUp, SignIn, User } from "@phosphor-icons/react/dist/ssr"
-import { Binoculars } from "@phosphor-icons/react"
+import { Binoculars, SignOut } from "@phosphor-icons/react"
 import Link from "next/link"
 import { NavItem } from "../NavItem"
 import { useRouter } from "next/router"
-
+import * as Avatar from '@radix-ui/react-avatar'
 
 export function Sidebar() {
   const isAuthenticated = true
@@ -35,10 +35,25 @@ export function Sidebar() {
       </div>
 
 
-      <Link href='/' className="flex items-center gap-3 mb-6 font-bold text-gray-100 hover:text-gray-50">
-        Fazer Login
-        <SignIn className="w-5 h-5 text-green-100" />
-      </Link>
+      {isAuthenticated ? (
+        <div className="flex items-center gap-3 mb-6">
+          <Avatar.Root className="bg-blackA3 inline-flex h-8 w-8 select-none overflow-hidden rounded-full bg-gray-500 border border-green-200">
+            <Avatar.Image src="https://github.com/gabislera.png" />
+            <Avatar.Fallback delayMs={600} className="leading-1 flex h-full w-full items-center justify-center text-sm">GC</Avatar.Fallback>
+          </Avatar.Root>
+          <span className="text-sm text-gray-200">Gabriela</span>
+          <SignOut className="w-5 h-5 text-danger-light hover:opacity-75 cursor-pointer" />
+
+        </div>
+      ) : (
+        <Link href='/' className="flex items-center gap-3 mb-6 font-bold text-gray-100 hover:text-gray-50">
+          Fazer Login
+          <SignIn className="w-5 h-5 text-green-100" />
+        </Link>
+      )
+      }
+
+
     </aside >
   )
 }

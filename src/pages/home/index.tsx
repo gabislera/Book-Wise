@@ -1,8 +1,12 @@
-import { BookCard } from "@/components/BookCard";
+import { RatingCard } from "@/components/RatingCard";
+import { LastReadCard } from "@/components/LastReadCard";
+import { PopularBookCard } from "@/components/PopularBookCard";
 import DefaultLayout from "@/layouts/DefaultLayout";
 import { ChartLineUp } from "@phosphor-icons/react";
 
 export default function Home() {
+  const isAuthenticated = true
+
   return (
     <DefaultLayout>
       <div className="flex items-center gap-3 mb-10">
@@ -11,19 +15,31 @@ export default function Home() {
       </div>
 
       <section className="grid grid-cols-home ">
-        <main >
-          <h2 className="text-sm mb-4">Avaliações mais recentes</h2>
-          <BookCard />
-          <BookCard />
-          <BookCard />
-          <BookCard />
-          <BookCard />
-          <BookCard />
-          <BookCard />
-          <BookCard />
-          <BookCard />
-          <BookCard />
-          <BookCard />
+        <main>
+          {isAuthenticated && (
+            <div className="max-w-[608px]">
+              <div className="flex justify-between">
+                <h2 className="text-sm mb-4">Sua última leitura</h2>
+                <a href="">Ver todas</a>
+              </div>
+              <LastReadCard />
+            </div>
+          )}
+
+          <div >
+            <h2 className="text-sm mb-4">Avaliações mais recentes</h2>
+            <RatingCard />
+            <RatingCard />
+            <RatingCard />
+            <RatingCard />
+            <RatingCard />
+            <RatingCard />
+            <RatingCard />
+            <RatingCard />
+            <RatingCard />
+            <RatingCard />
+            <RatingCard />
+          </div>
         </main>
 
         <aside className="col-start-2  ">
@@ -34,9 +50,10 @@ export default function Home() {
               <span>Ver todos</span>
             </div>
 
-            <div className="w-[324px] h-[130px] bg-gray-700 rounded-lg mb-5"></div>
-            <div className="w-[324px] h-[130px] bg-gray-700 rounded-lg mb-5"></div>
-            <div className="w-[324px] h-[130px] bg-gray-700 rounded-lg mb-5"></div>
+            <PopularBookCard />
+            <PopularBookCard />
+            <PopularBookCard />
+            <PopularBookCard />
           </div>
         </aside>
       </section>

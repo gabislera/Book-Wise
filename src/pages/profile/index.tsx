@@ -5,7 +5,7 @@ import type { NextPageWithLayout } from '../_app'
 const Profile: NextPageWithLayout = () => {
   return (
     <div className="flex flex-col gap-24">
-      <div className="outline">profile</div>
+      <div className="">profile</div>
 
       <h1>teste</h1>
     </div>
