@@ -1,9 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/pages/**/*.tsx',
+    './src/layouts/**/**.tsx', // Aqui incluindo sua pasta layouts
+    './src/components/**/**.tsx',
   ],
   theme: {
     extend: {
@@ -13,7 +13,8 @@ module.exports = {
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
       gridTemplateColumns: {
-        app: 'minmax(18rem, 20rem) 1fr',
+        app: 'minmax(12rem, 14.5rem) 1fr',
+        home: '1fr 20rem'
       },
       colors: {
         transparent: "rgba(0,0,0,1)",

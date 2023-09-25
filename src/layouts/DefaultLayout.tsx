@@ -7,10 +7,10 @@ type DefaultLayoutProps = {
 
 export default function DefaultLayout({ children }: DefaultLayoutProps) {
   return (
-    <div className="grid grid-cols-2 gap-24 min-h-screen outline">
+    <div className="grid grid-cols-app gap-24 min-h-screen outline">
       <Sidebar />
 
-      <main className="outline">
+      <main className="lg:col-start-2 max-w-[63.375rem] mt-[4.5rem]">
         {children}
       </main>
     </div>

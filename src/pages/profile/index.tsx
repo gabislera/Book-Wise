@@ -4,7 +4,7 @@ import type { NextPageWithLayout } from '../_app'
 
 const Profile: NextPageWithLayout = () => {
   return (
-    <div className="flex flex-col gap-24 min-h-screen">
+    <div className="flex flex-col gap-24">
       <div className="outline">profile</div>
 
       <h1>teste</h1>
