@@ -1,13 +1,12 @@
 import Image from 'next/image'
 import book from '../../assets/arquitetura-limpa.png'
-import { Star, StarHalf } from '@phosphor-icons/react'
 import { RatingStars } from '../RatingStars'
 
 export function UserRatingCard() {
   return (
     <>
       <span className='text-sm text-gray-100 block mb-2'>Há 2 dias</span>
-      <div className="max-w-[608px] bg-gray-700 rounded-lg mb-10 p-6">
+      <div className="max-w-[608px] bg-gray-700 rounded-lg mb-6 p-6">
         <div className='grid grid-cols-[108px_auto] gap-5 mb-6'>
           <Image src={book} alt='' width={108} />
 

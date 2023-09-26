@@ -1,8 +1,14 @@
 import { RatingCard } from "@/components/RatingCard";
 import { LastReadCard } from "@/components/LastReadCard";
-import { TrendingBookCard } from "@/components/TrendingBookCard";
 import DefaultLayout from "@/layouts/DefaultLayout";
 import { ChartLineUp } from "@phosphor-icons/react";
+import { BookCard } from "@/components/BookCard";
+
+const book = {
+  author: 'Author',
+  cover_url: '/images/books/o-programador-pragmatico.png',
+  name: 'Nome'
+}
 
 export default function Home() {
   const isAuthenticated = true
@@ -20,7 +26,7 @@ export default function Home() {
             <div className="max-w-[608px]">
               <div className="flex justify-between">
                 <h2 className="text-sm mb-4">Sua última leitura</h2>
-                <a href="">Ver todas</a>
+                <a href="" className="text-sm">Ver todas</a>
               </div>
               <LastReadCard />
             </div>
@@ -43,16 +49,16 @@ export default function Home() {
         </main>
 
         <aside className="col-start-2 ">
-          <div className="fixed left-auto">
+          <div className="fixed left-auto w-full">
             <div className="flex justify-between text-sm mb-4">
               <h2>Livros populares</h2>
               <span>Ver todos</span>
             </div>
 
-            <TrendingBookCard />
-            <TrendingBookCard />
-            <TrendingBookCard />
-            <TrendingBookCard />
+            <BookCard sm book={book} />
+            <BookCard sm book={book} />
+            <BookCard sm book={book} />
+
           </div>
         </aside>
       </section>

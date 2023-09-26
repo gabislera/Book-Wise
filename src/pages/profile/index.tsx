@@ -17,7 +17,7 @@ const Profile: NextPageWithLayout = () => {
 
       <section className="grid grid-cols-home ">
         <main>
-          <form className="max-w-[608px] ">
+          <form className="max-w-[608px] mb-6 ">
             <SearchInput />
           </form>
 

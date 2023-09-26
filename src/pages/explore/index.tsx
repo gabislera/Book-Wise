@@ -1,11 +1,12 @@
 
 import DefaultLayout from "@/layouts/DefaultLayout";
-import { useState, type ReactElement } from 'react'
+import { useState, type ReactElement, useEffect } from 'react'
 import type { NextPageWithLayout } from '../_app'
 import { Binoculars, User } from "@phosphor-icons/react";
 import { SearchInput } from "@/components/SearchInput";
 import { Tag } from "@/components/Tag";
 import { BookCard } from "@/components/BookCard";
+import { api } from "@/lib/axios";
 
 const categories = [
   'Computação',
@@ -19,9 +20,19 @@ const categories = [
 
 const Explore: NextPageWithLayout = () => {
   const [selectCategory, setSelectCategory] = useState<String | null>(null)
+  const [books, setBooks] = useState<[]>([])
+
+  useEffect(() => {
+    async function fetchBooks() {
+      const response = await api.get('/books')
+      setBooks(response.data.books)
+    }
+
+    fetchBooks()
+  }, [])
 
   return (
-    <section className="ouline">
+    <section className="">
       <header className="flex justify-between items-center mb-8">
         <div className="flex items-center gap-3">
           <Binoculars className="w-8 h-8 text-green-100 " />
@@ -40,20 +51,16 @@ const Explore: NextPageWithLayout = () => {
         ))}
       </section>
 
+      {/* arrumar */}
       <main className="grid lg:grid-cols-2 xl:grid-cols-3 gap-5">
-        <BookCard />
-        <BookCard />
-        <BookCard />
-        <BookCard />
-        <BookCard />
-        <BookCard />
-        <BookCard />
-        <BookCard />
-        <BookCard />
-        <BookCard />
-        <BookCard />
-        <BookCard />
-        <BookCard />
+        {Array.isArray(books) ? (
+          books.map((book, index) => (
+            <BookCard key={index} book={book} />
+          ))
+        ) : (
+          <p>Carregando livros...</p>
+        )}
+
       </main>
     </section>
   )
