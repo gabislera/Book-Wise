@@ -1,15 +1,24 @@
 import * as Dialog from '@radix-ui/react-dialog'
 import Image from 'next/image'
 import { RatingStars } from '../RatingStars'
-import { BookOpen, Bookmark } from '@phosphor-icons/react'
+import { BookOpen, Bookmark, X } from '@phosphor-icons/react'
 import { RatingCard } from '../RatingCard'
+import { AuthModal } from '../AuthModal'
+import { RatingForm } from '../RatingForm'
+import { useState } from 'react'
 
 export function SidePannel() {
+  const isLogged = true
+  const [isFormVisible, setIsFormVisible] = useState(false)
+
   return (
     <Dialog.Portal>
       <Dialog.Overlay className="bg-black/60 fixed inset-0" />
       <Dialog.Content className='fixed top-0 right-0 overflow-y-scroll z-999 w-[660px] h-full bg-gray-800 py-16 flex flex-col items-center'>
         <section className='w-[564px] bg-gray-700 rounded-lg  px-8 py-6'>
+          <Dialog.Close className='absolute top-[24px] right-[32px]'>
+            <X className='w-6 h-6' />
+          </Dialog.Close>
           <header className='grid grid-cols-[171px_auto] gap-8'>
             <div>
               <Image src={'/images/books/o-programador-pragmatico.png'} alt='' width={171} height={242} />
@@ -49,16 +58,23 @@ export function SidePannel() {
         <section className='w-[564px]'>
           <div className="flex items-center mt-10 mb-4 justify-between">
             <span className="text-sm">Avaliações</span>
-            <button className="text-sm">Avaliar</button>
+            {isLogged ? (
+              <button className="text-sm" onClick={() => setIsFormVisible(true)}>Avaliar</button>
+            ) : (
+              <Dialog.Root>
+                <Dialog.Trigger asChild>
+                  <button className="text-sm">Avaliar</button>
+                </Dialog.Trigger>
+                <AuthModal />
+              </Dialog.Root>
+            )}
           </div>
+          {isFormVisible && <RatingForm onCloseForm={setIsFormVisible} />}
           <RatingCard noImage />
           <RatingCard noImage />
           <RatingCard noImage />
         </section>
-
-
-        <Dialog.Close />
       </Dialog.Content>
-    </Dialog.Portal>
+    </Dialog.Portal >
   )
 }
