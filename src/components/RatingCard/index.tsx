@@ -25,7 +25,7 @@ export function RatingCard({ noImage }: RatingCardProps) {
             <span className='text-gray-400 text-sm'>Hoje</span>
           </div>
         </div>
-        <RatingStars />
+        <RatingStars rating={4} />
       </header>
 
       {noImage ? (

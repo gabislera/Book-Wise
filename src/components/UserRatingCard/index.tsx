@@ -16,7 +16,7 @@ export function UserRatingCard() {
               <span className='text-gray-400 mb-6'>J.R.R. Tolkien</span>
             </div>
 
-            <RatingStars />
+            <RatingStars rating={4} />
           </div>
         </div>
 

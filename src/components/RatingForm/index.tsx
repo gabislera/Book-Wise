@@ -8,16 +8,17 @@ interface RatingFormProps {
 }
 
 export function RatingForm({ onCloseForm }: RatingFormProps) {
-  const [ratingText, setRatingText] = useState('')
+  const [currentDescription, setCurrentDescription] = useState('')
+  const [currentRate, setCurrentRate] = useState(0)
 
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
-    console.log(ratingText)
+    console.log(currentDescription, currentRate)
     onCloseForm(false)
   }
 
   function clearForm() {
-    setRatingText('')
+    setCurrentDescription('')
     onCloseForm(false)
   }
 
@@ -32,13 +33,13 @@ export function RatingForm({ onCloseForm }: RatingFormProps) {
           <span>Gabriela Carniel</span>
         </div>
         {/* change to select stars component */}
-        <RatingStars />
+        <RatingStars rating={currentRate} setRating={setCurrentRate} />
       </div>
 
       <textarea
         className='px-5 py-3 w-full min-h-[164px] bg-gray-800 placeholder:text-gray-400' placeholder='Escreva sua avaliação'
-        value={ratingText}
-        onChange={(e) => setRatingText(e.target.value)}
+        value={currentDescription}
+        onChange={(e) => setCurrentDescription(e.target.value)}
       />
 
       <div className='flex gap-2 justify-end'>

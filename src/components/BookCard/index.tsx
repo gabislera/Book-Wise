@@ -14,6 +14,7 @@ interface BookCardProps {
 }
 
 export function BookCard({ book, sm }: BookCardProps) {
+  console.log(book)
   const imageWidth = sm ? 64 : 108
   const imageHeight = sm ? 94 : 152
   const maxChars = 30
@@ -33,7 +34,7 @@ export function BookCard({ book, sm }: BookCardProps) {
               <span className='text-gray-400 mb-5 text-sm'>{book.author}</span>
             </div>
 
-            <RatingStars />
+            <RatingStars rating={4} />
           </div>
         </button>
       </Dialog.Trigger>

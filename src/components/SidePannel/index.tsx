@@ -30,7 +30,7 @@ export function SidePannel() {
               </div>
 
               <div>
-                <RatingStars />
+                <RatingStars rating={4} />
                 <span className='text-gray-400 mb-5 text-sm'>3 avaliações</span>
               </div>
             </div>
